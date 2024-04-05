@@ -3,7 +3,6 @@ on:
   workflow_run:
     workflows: ["default2"]
     types: [completed]
-    branches: main
 jobs:
   job1:
     runs-on: ubuntu-latest
