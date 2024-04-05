@@ -1,0 +1,12 @@
+name: comment
+on:
+  workflow_run:
+    workflows: ["default2"]
+    branches: main
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        run: |
+          echo "hola"
