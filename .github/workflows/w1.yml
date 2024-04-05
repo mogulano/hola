@@ -1,0 +1,9 @@
+name: default2
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "test2"
