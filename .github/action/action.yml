@@ -10,7 +10,6 @@ inputs:
     default: 'test'
 runs:
   using: "composite"
-  steps:
-    shell: bash
+    steps:
     - run: echo '${{ github.event.comment.body }}'
     - run: echo '${{ input.test }}'
