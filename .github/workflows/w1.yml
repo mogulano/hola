@@ -1,9 +1,13 @@
 name: default2
 on:
   pull_request:
+
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - run: |
           echo "test2"
+      - run: echo '${{ github.event.issue.title }}'
