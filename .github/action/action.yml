@@ -12,4 +12,6 @@ runs:
   using: "composite"
   steps:
     - run: echo '${{ github.event.comment.body }}'
+      shell: bash
     - run: echo '${{ input.test }}'
+      shell: bash
