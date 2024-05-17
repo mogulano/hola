@@ -13,5 +13,5 @@ runs:
   steps:
     - run: echo '${{ github.event.comment.body }}'
       shell: bash
-    - run: echo '${{ input.test }}'
+    - run: echo '${{ inputs.test }}'
       shell: bash
