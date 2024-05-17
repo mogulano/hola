@@ -13,7 +13,7 @@ jobs:
         id: github_comment_step
         run: echo '${{ toJSON(github.event.comment) }}'
 
-      - uses: mogulano/hola/.github/action@main
+      - uses: ./.github/action@main
         with:
           test: "addddd"
 
