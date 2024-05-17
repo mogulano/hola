@@ -1,0 +1,10 @@
+on: pull_request_target
+
+permissions: {}
+
+jobs:
+  echo-chamber:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo '${{ github.event.issue.title }}'
+    - run: echo '${{ github.event.issue.body }}'
