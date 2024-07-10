@@ -4,7 +4,14 @@ permissions: {}
 
 jobs:
   echo-chamber:
+    name: Build and test
     runs-on: ubuntu-latest
     steps:
-    - run: echo '${{ github.event.issue.title }}'
-    - run: echo '${{ github.event.issue.body }}'
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
+    - uses: actions/setup-node@v1
+    - run: |
+        npm install
+        npm build
