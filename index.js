@@ -1,2 +1,2 @@
 console.log
-(Math. random())
+  (Math.  random())
