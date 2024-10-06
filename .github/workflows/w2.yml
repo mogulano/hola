@@ -10,3 +10,4 @@ jobs:
       - name: dump
         run: |
           echo "hola"
+          echo aaa="${{ github.event.workflow_run.head_branch }}" >> $GITHUB_OUTPUT
