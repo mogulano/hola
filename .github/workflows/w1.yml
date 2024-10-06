@@ -8,4 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo '${{ toJson(github.event.issue.title) }}'
+      - run: |
+            if [[ '${{env.EVENT_COMMITS}}' == 'null' ]]; then
+              echo "COMMIT_INFO_MESSAGE=${{ github.event_name }} by ${{ env.COMMIT_INFO_AUTHOR }}" >> $GITHUB_ENV
+            else
+              echo "COMMIT_INFO_MESSAGE=$(echo \"${{ env.EVENT_COMMITS }}\" | awk -F '\\\\n' '{print $1}' | sed 's/^\"//')" >> $GITHUB_ENV
+            fi
+        env:
+          EVENT_COMMITS: ${{ toJson(github.event.issue.title) }}
