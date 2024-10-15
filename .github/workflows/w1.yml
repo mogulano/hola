@@ -6,6 +6,7 @@ permissions: {}
 
 jobs:
   build:
+    environment: ${{ 'release-base-images' }}
     runs-on: ubuntu-latest
     steps:
       - run: |
